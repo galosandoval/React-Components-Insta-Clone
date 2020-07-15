@@ -20,7 +20,6 @@ const App = () => {
 
   const [ posts, setPosts] = useState(dummyData)
   console.log('this is the dummyData', posts)
-  const likePost = postId => {
     // This function is passed into nested components using props, to allow them to update application state.
     // It takes a post id as its only argument. The idea is to increase the 'likes' count of the post with the given `id`.
     // We will update the posts slice of state using `setPosts`, passing as the new state the invocation of `posts.map()`.
@@ -28,12 +27,14 @@ const App = () => {
     //  - if the `id` of the post matches `postId`, return a new post object containing an increased 'likes' count.
     //  - otherwise just return the post object unchanged.
     
-    const likePost = postId => {
+  const likePost = postId => {
     setPosts(posts.map(post => {
+      console.log('being')
       if (post.id === postId) {
         return {...post, likes: post.likes + 1}
-      }
+      }else{
       return post
+      }
       // <Posts key={props.id} likePost = {likePost}/>
     }))}
 
@@ -46,7 +47,7 @@ const App = () => {
     //     }
     //     return fr
     //   }))
-}
+
   return (
     <div className="App">
       {/* Add SearchBar and Posts here to render them */}
