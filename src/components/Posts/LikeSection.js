@@ -15,7 +15,7 @@ console.log('heres the props', props)
         className="like-section"
         key="likes-icons-container"
       >
-        <div onClick = {() => likePost()} className="like-section-wrapper">
+        <div onClick = {likePost} className="like-section-wrapper">
          <FontAwesomeIcon icon={faHeart} />
         </div>
         <div className="like-section-wrapper">
